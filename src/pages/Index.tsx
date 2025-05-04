@@ -10,7 +10,7 @@ import About from "@/components/About";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       <div>
         <Navbar />
       </div>
