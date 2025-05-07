@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 interface FAQItem {
   question: string;
@@ -8,6 +10,10 @@ interface FAQItem {
 }
 
 export default function FAQ() {
+  useEffect(() => {
+    AOS.init({ duration: 800 });
+  }, []);
+
   const [faqItems, setFaqItems] = useState<FAQItem[]>([
     {
       question: "What services does Fostacomms offer?",
@@ -61,25 +67,22 @@ export default function FAQ() {
   return (
     <div className="bg-fostacomms-blue px-1 md:px-4 py-20">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-2">
+        <div className="text-center mb-2" data-aos="fade-down">
           <h2 className="inline-block text-fostacomms-black bg-fostacomms-cream px-4 py-2 rounded-full text-sm font-semibold font-kamerik mb-4 lg:-mt-10">
-            So Many Benefits
+            Public Relations & Consulting Firm in Lagos
           </h2>
         </div>
 
-        <div className="text-center mb-12">
+        <div className="text-center mb-12" data-aos="fade-up">
           <h1 className="text-2xl md:text-5xl font-heading mb-6 md:mb-0 text-fostacomms-cream">
             Frequently Asked
-            <span className="text-fostacomms-yellow font-heading">
-              {" "}
-              Questions.
-            </span>
+            <span className="text-fostacomms-yellow font-heading"> Questions.</span>
           </h1>
         </div>
 
         <div className="bg-fostacomms-blue p-6 md:p-10 rounded-lg">
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white p-6 rounded-lg">
+            <div className="bg-white p-6 rounded-lg" data-aos="fade-up">
               <h3 className="text-xl font-heading text-gray-800 mb-4">
                 Send a Message
               </h3>
@@ -134,7 +137,9 @@ export default function FAQ() {
               {faqItems.map((faq, index) => (
                 <div
                   key={index}
-                  className="bg-fostacomms-yellow rounded-lg overflow-hidden"
+                  className="bg-white rounded-lg overflow-hidden"
+                  data-aos="fade-up"
+                  data-aos-delay={index * 100}
                 >
                   <button
                     onClick={() => toggleFAQ(index)}

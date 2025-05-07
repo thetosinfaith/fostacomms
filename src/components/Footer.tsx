@@ -19,9 +19,7 @@ export default function Footer() {
             </div>
 
             <p className="text-fostacomms-black mt-4 max-w-md">
-              Get the latest updates on video trends, exclusive
-              behind-the-scenes content, and special offers straight to your
-              inbox.
+            Public Relations & Consulting Firm in Lagos
             </p>
           </div>
 

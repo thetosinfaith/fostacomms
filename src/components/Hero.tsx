@@ -42,7 +42,7 @@ const Hero = () => {
             <div className="order-1 lg:order-2">
               <div className="space-y-6 lg:mt-6">
                 <span className="inline-block text-fostacomms-gold bg-fostacomms-cream px-4 py-2 rounded-full text-sm font-semibold font-kamerik lg:-mt-10">
-                  Leading PR Agency in Nigeria
+                Public Relations & Consulting Firm in Lagos
                 </span>
                 <h1
                   className="font-heading text-3xl md:text-6xl lg:text-6xl mb-6 text-fostacomms-black"

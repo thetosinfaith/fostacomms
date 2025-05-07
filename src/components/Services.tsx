@@ -60,7 +60,7 @@ export default function OurServices() {
       <div className="max-w-7xl mx-auto px-4 py-12 md:py-24">
         <div className="mb-2">
           <h2 className="inline-block text-fostacomms-black bg-fostacomms-cream px-4 py-2 rounded-full text-sm font-semibold font-kamerik mb-4 lg:-mt-10">
-            People Before Profits
+          Public Relations & Consulting Firm in Lagos
           </h2>
         </div>
 

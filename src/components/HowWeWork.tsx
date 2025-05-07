@@ -1,4 +1,15 @@
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 export default function HowWeWork() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // animation duration
+      once: true, // whether animation should happen only once
+    });
+  }, []);
+
   const steps = [
     {
       number: 1,
@@ -31,15 +42,14 @@ export default function HowWeWork() {
       <div className="max-w-6xl mx-auto">
         <div className="mb-2">
           <h2 className="inline-block text-fostacomms-black bg-fostacomms-cream px-4 py-2 rounded-full text-sm font-semibold font-kamerik mb-4 lg:-mt-10">
-            Let's Get To Work{" "}
+            Public Relations & Consulting Firm in Lagos
           </h2>
         </div>
 
         <div className="mb-12">
           <h1 className="text-2xl md:text-5xl font-heading mb-6 md:mb-0">
             Our Work
-            <span className="text-fostacomms-black font-heading"> Process</span>
-            .
+            <span className="text-fostacomms-black font-heading"> Process</span>.
           </h1>
         </div>
 
@@ -48,6 +58,8 @@ export default function HowWeWork() {
             <div
               key={step.number}
               className="flex flex-col items-start text-left w-full px-8 sm:px-10 bg-white/10 rounded-lg py-10 md:py-10"
+              data-aos="fade-up" // <-- AOS animation
+              data-aos-delay={step.number * 150} // optional staggered delay
             >
               <span
                 className="text-[90px] md:text-[120px] font-bold mb-2 bg-gradient-to-b text-transparent bg-clip-text"

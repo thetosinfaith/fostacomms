@@ -21,7 +21,7 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-white shadow-md py-4" : "bg-transparent py-6"
+        scrolled ? "bg-white shadow-md py-6" : "bg-transparent py-6"
       }`}
     >
       <div className="container mx-auto px-8 md:px-8">
@@ -96,41 +96,45 @@ export default function Navbar() {
           </div>
 
           <button
-            className="md:hidden text-gray-800"
+            className="md:hidden text-gray-800 z-50"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
+      </div>
 
-        {isMenuOpen && (
-          <nav className="md:hidden mt-4 space-y-3 pb-3">
-            {[
-              { to: "/services", text: "Services" },
-              { to: "/why-us", text: "Why Us" },
-              { to: "/our-works", text: "Our Works" },
-              { to: "/testimonial", text: "Testimonial" },
-              { to: "/pricing", text: "Pricing" },
-              { to: "/faq", text: "FAQ" },
-            ].map((item) => (
-              <Link
-                key={item.to}
-                to={item.to}
-                className="block text-gray-800 hover:text-[#FF5C00] font-medium"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.text}
-              </Link>
-            ))}
+      <div
+        className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform transition-transform duration-300 ease-in-out md:hidden ${
+          isMenuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="p-6 space-y-4">
+          {[
+            { to: "/services", text: "Services" },
+            { to: "/why-us", text: "Why Us" },
+            { to: "/our-works", text: "Our Works" },
+            { to: "/testimonial", text: "Testimonial" },
+            { to: "/pricing", text: "Pricing" },
+            { to: "/faq", text: "FAQ" },
+          ].map((item) => (
             <Link
-              to="/get-started"
-              className="block bg-[#FF5C00] text-white px-4 py-2 rounded-full font-medium hover:bg-[#E65300] transition-colors w-full text-center mt-4"
+              key={item.to}
+              to={item.to}
+              className="block text-gray-800 hover:text-[#FF5C00] font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
-              Get Viral Today
+              {item.text}
             </Link>
-          </nav>
-        )}
+          ))}
+          <Link
+            to="/get-started"
+            className="block bg-[#FF5C00] text-white px-4 py-2 rounded-full font-medium hover:bg-[#E65300] transition-colors w-full text-center mt-4"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Get Viral Today
+          </Link>
+        </div>
       </div>
     </header>
   );

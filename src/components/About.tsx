@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { Sparkles, ArrowRight, Target, Globe, Handshake } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Brands from "../../src/assets/brands.png";
+import Brands from "../../src/assets/certified.jpg";
 
 export default function About() {
   useEffect(() => {
